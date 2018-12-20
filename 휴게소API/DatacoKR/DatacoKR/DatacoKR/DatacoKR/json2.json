@@ -1,0 +1,70 @@
+{
+  "list": [
+    {
+      "unitName": "°è·æÈÞ°Ô¼Ò(´ëÀü)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "042",
+      "routeNo": "2510",
+      "routeName": "È£³²¼±Áö¼±",
+      "xValue": "127.288176",
+      "yValue": "36.262429"
+    },
+    {
+      "unitName": "¹ú°îÈÞ°Ô¼Ò(³í»ê)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "043",
+      "routeNo": "2510",
+      "routeName": "È£³²¼±Áö¼±",
+      "xValue": "127.273793",
+      "yValue": "36.217488"
+    },
+    {
+      "unitName": "¾çÃÌÈÞ°Ô¼Ò(´ëÀü)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "046",
+      "routeNo": "2510",
+      "routeName": "È£³²¼±Áö¼±",
+      "xValue": "127.216451",
+      "yValue": "36.158655"
+    },
+    {
+      "unitName": "¹ú°îÈÞ°Ô¼Ò(È¸´ö)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "223",
+      "routeNo": "2510",
+      "routeName": "È£³²¼±Áö¼±",
+      "xValue": null,
+      "yValue": null
+    },
+    {
+      "unitName": "ÇöÇ³ÈÞ°Ô¼Ò(´ë±¸)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "089",
+      "routeNo": "4510",
+      "routeName": "ÁßºÎ³»·úÁö¼±",
+      "xValue": "128.437201",
+      "yValue": "35.702630"
+    },
+    {
+      "unitName": "ÇöÇ³ÈÞ°Ô¼Ò(ÇöÇ³)",
+      "pageNo": null,
+      "numOfRows": null,
+      "unitCode": "090",
+      "routeNo": "4510",
+      "routeName": "ÁßºÎ³»·úÁö¼±",
+      "xValue": "128.436431",
+      "yValue": "35.701990"
+    }
+  ],
+  "count": 226,
+  "pageNo": 12,
+  "numOfRows": 20,
+  "pageSize": 12,
+  "message": "NORMAL SERVICE.",
+  "code": "00"
+}
