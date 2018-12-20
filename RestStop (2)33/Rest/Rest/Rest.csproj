@@ -129,7 +129,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\GAS.jpg" />
-    <None Include="Resources\GAS1.jpg" />
+    <EmbeddedResource Include="Resources\GAS1.jpg" />
+    <EmbeddedResource Include="Resources\street-238458_1920.jpg" />
     <Content Include="res_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>res.mdf</DependentUpon>

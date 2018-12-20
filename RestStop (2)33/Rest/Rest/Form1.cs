@@ -29,6 +29,8 @@ namespace Rest
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ContextMenuStrip = contextMenuStrip1;
+            panel1.BackColor = Color.FromArgb(0, 0, 0, 0); // 패널을 투명한 색으로 바꿈 
             using (SqlConnection con = new SqlConnection())
             {
                 con.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
@@ -43,7 +45,7 @@ namespace Rest
                     lstRestStop.Add(new RestStopFac(datas["batchMenu"].ToString(), datas["brand"].ToString(), datas["convenience"].ToString(), datas["direction"].ToString(), datas["serviceAreaCode"].ToString(), datas["serviceAreaName"].ToString(), datas["telNo"].ToString(), datas["truckSaYn"].ToString()));
                 }
                 con.Close();
-                
+
                 con.Open();
                 cmd.CommandText = "SelectAllInRoute";
                 datas = cmd.ExecuteReader();
@@ -64,6 +66,46 @@ namespace Rest
         private void button1_Click_1(object sender, EventArgs e)
         {
             new FrmGasStation().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("프로그램을 종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            var s = sender as Panel;
+            if (e.Button != System.Windows.Forms.MouseButtons.Left)
+                return;
+
+            s.Parent.Left = this.Left + (e.X - ((Point)s.Tag).X);
+            s.Parent.Top = this.Top + (e.Y - ((Point)s.Tag).Y);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            var s = sender as Panel;
+            s.Tag = new Point(e.X, e.Y);
+        }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("프로그램을 종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo, MessageBoxIcon.None)== DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

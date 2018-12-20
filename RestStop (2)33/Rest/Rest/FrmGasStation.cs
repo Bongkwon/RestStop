@@ -28,9 +28,8 @@ namespace Rest
         }
 
         private void FrmGasStation_Load(object sender, EventArgs e)
-        {
-            //ProgressBar pb = 
-            
+        {            
+            this.ContextMenuStrip = new Form1().contextMenuStrip1;
             this.BackColor = Color.Gray;
             
             rdoSearchByRoute.Checked = true;
