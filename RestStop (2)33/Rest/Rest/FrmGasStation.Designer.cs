@@ -188,7 +188,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Ivory;
             this.label4.Location = new System.Drawing.Point(11, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 23);
@@ -200,7 +200,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Ivory;
             this.label3.Location = new System.Drawing.Point(11, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 23);
@@ -212,7 +212,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.ForeColor = System.Drawing.Color.Ivory;
             this.label6.Location = new System.Drawing.Point(11, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 23);
@@ -234,6 +234,7 @@
             // 
             this.pictureBox1.Image = global::Rest.Properties.Resources.GAS1;
             this.pictureBox1.Location = new System.Drawing.Point(22, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(349, 467);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -307,8 +308,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(456, 558);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -329,7 +330,6 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "FrmGasStation";
             this.Text = "주유";
             this.TransparencyKey = System.Drawing.Color.White;
