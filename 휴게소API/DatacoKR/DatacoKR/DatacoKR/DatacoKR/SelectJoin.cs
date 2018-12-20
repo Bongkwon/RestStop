@@ -27,58 +27,16 @@ namespace DatacoKR
         Map map;
         ConnectionJoin conn = new ConnectionJoin();
         List<string> highways = new List<string>();
-
+        string url = "";
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
         private static List<Map> maps = new List<Map>();
 
         public static List<Map> Maps { get => maps; set => maps = value; }
 
-        private void SelectJoin_Load(object sender, EventArgs e)
-        {
-            //ConnectionJoin conn = new ConnectionJoin();
-
-            //comboBox1.Items.Add(conn.ExcuteSelect());
-            
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            label7.Text = maps[0].Address_name;
-            label8.Text = maps[0].Phone;
-            label9.Text = maps[0].Place_name;
-            linkLabel1.Text = maps[0].Place_url;
-            
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = conn.OpenConnection();
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.CommandText = "SelectJoin";
-            //var r = cmd.ExecuteReader();
-
-            ////MessageBox.Show(comboBox1.SelectedItem.ToString());
-            //DataTable table = new DataTable();
-            //table.Columns.Add("휴게소 이름");
-            //table.Columns.Add("대표메뉴");
-            //table.Columns.Add("전화번호");
-            
-
-            //while (r.Read())
-            //{
-            //    DataRow row = table.NewRow();
-
-            //    row["휴게소 이름"] = r["unitName"].ToString();
-            //    row["대표메뉴"] = r["batchMenu"].ToString();
-            //    row["전화번호"] = r["telNo"].ToString();
-            //    table.Rows.Add(row);
-
-            //}
-            
-
-            //dataGridView1.DataSource = table;
-
-            
-
-        }
-
+        
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -107,8 +65,16 @@ namespace DatacoKR
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CCTVDate data = new CCTVDate();
-            data.Show();
+            if (comboBox1.SelectedItem == null && comboBox2.SelectedItem == null)
+            {
+                MessageBox.Show("휴게소를 먼저 선택해 주세요");
+            }
+            else
+            {
+                CCTVDate data = new CCTVDate();
+                data.Show();
+            }
+            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,20 +123,65 @@ namespace DatacoKR
             }
 
             
-            string url = "http://map.daum.net/?q=" + maps[0].Place_name + "&srcid=" + maps[0].Id + "&map_type=TYPE_MAP";
+            url = "http://map.daum.net/?q=" + maps[0].Place_name + "&srcid=" + maps[0].Id + "&map_type=TYPE_MAP";
 
             
 
-            Uri uri = new Uri(url);
-            this.webBrowser1.Url = uri;
+           
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null && comboBox2.SelectedItem == null)
+            {
+                MessageBox.Show("노선명과 휴게소명을 먼저 선택해 주세요");
+            }
+            else
+            {
+                label7.Text = maps[0].Address_name;
+                label8.Text = maps[0].Phone;
+                label9.Text = maps[0].Place_name;
+                linkLabel1.Text = maps[0].Place_url;
+                Uri uri = new Uri(url);
+                this.webBrowser1.Url = uri;
+               
+            }
+            
+
+        }
+
 
         private void linkLabel1_Click_1(object sender, EventArgs e)
         {
             string url = linkLabel1.Text;
             Uri uri = new Uri(url);
             System.Diagnostics.Process.Start("Chrome.exe",url);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void SelectJoin_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void SelectJoin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void SelectJoin_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

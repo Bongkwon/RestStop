@@ -20,7 +20,9 @@ namespace DatacoKR
             InitializeComponent();
         }
         List<CCTV> ct = new List<CCTV>();
-        
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
 
         private void CCTVDate_Load(object sender, EventArgs e)
         {
@@ -48,6 +50,11 @@ namespace DatacoKR
                     CctvName = item.SelectSingleNode("cctvname").InnerText
                 };
                 ct.Add(cctv);
+                
+            }
+            if (ct.Count == 0)
+            {
+                MessageBox.Show("해당 휴게소 근처 CCTV가 존재 하지 않습니다.");
             }
             dataGridView1.DataSource = ct;
             //doc.SelectNodes("//data/cctvurl");
@@ -75,6 +82,32 @@ namespace DatacoKR
                     MessageBox.Show("해당 CCTV영상을 열 수 없습니다.");
                 }
             }
+        }
+
+        private void CCTVDate_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void CCTVDate_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void CCTVDate_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

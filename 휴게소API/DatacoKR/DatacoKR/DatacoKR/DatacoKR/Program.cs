@@ -16,7 +16,7 @@ namespace DatacoKR
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectJoin());
+            Application.Run(new Main());
         }
     }
 }

@@ -95,7 +95,12 @@
       <DependentUpon>CCTVDate.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionJoin.cs" />
-    <Compile Include="Facilites.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectJoin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CCTVDate.resx">
       <DependentUpon>CCTVDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectJoin.resx">
       <DependentUpon>SelectJoin.cs</DependentUpon>
