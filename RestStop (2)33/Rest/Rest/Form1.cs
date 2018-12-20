@@ -16,7 +16,7 @@ namespace Rest
     {
         internal static List<RouteFac> lstRoute = new List<RouteFac>();
         internal static List<RestStopFac> lstRestStop = new List<RestStopFac>();
-
+        FrmGasStation frmg = null;
         public Form1()
         {
             InitializeComponent();
@@ -29,8 +29,11 @@ namespace Rest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.ContextMenuStrip = contextMenuStrip1;
+            //this.BackColor = Color.FromArgb(1, 0, 0, 0); 
+            this.ContextMenuStrip = contextMenuStrip1;            
+            panel3.BackColor = Color.FromArgb(0, 0, 0, 0); // 패널을 투명한 색으로 바꿈 
             panel1.BackColor = Color.FromArgb(0, 0, 0, 0); // 패널을 투명한 색으로 바꿈 
+            
             using (SqlConnection con = new SqlConnection())
             {
                 con.ConnectionString = ConfigurationManager.ConnectionStrings["conStr"].ConnectionString;
@@ -61,11 +64,6 @@ namespace Rest
         private void button2_Click(object sender, EventArgs e)
         {
             new FrmRouteFacilities().Show();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            new FrmGasStation().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -106,6 +104,53 @@ namespace Rest
             {
                 return;
             }
+        }
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            종료ToolStripMenuItem_Click(null, null);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            ShowGasStation();
+        }        
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel7_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowGasStation();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowGasStation();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        }
+
+        private void ShowGasStation()
+        {
+            if (frmg == null)
+            {
+                frmg = new FrmGasStation();
+                frmg.Show();
+            }
+            else
+            {
+                frmg.Focus();
+            }
+        }
+
+        private void 프로그램정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmProgramInfo().Show();
         }
     }
 }

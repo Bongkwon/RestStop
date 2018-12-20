@@ -216,5 +216,26 @@ namespace Rest
         {
             this.Close();
         }
+
+        private void panel9_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel8_MouseMove(object sender, MouseEventArgs e)
+        {
+            var s = sender as Panel;
+            if (e.Button != System.Windows.Forms.MouseButtons.Left)
+                return;
+
+            s.Parent.Left = this.Left + (e.X - ((Point)s.Tag).X);
+            s.Parent.Top = this.Top + (e.Y - ((Point)s.Tag).Y);
+        }
+
+        private void panel8_MouseDown(object sender, MouseEventArgs e)
+        {
+            var s = sender as Panel;
+            s.Tag = new Point(e.X, e.Y);
+        }
     }
 }

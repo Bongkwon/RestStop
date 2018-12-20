@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblRestName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,7 +51,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,6 +61,8 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbRoute
@@ -67,7 +70,7 @@
             this.cmbRoute.BackColor = System.Drawing.Color.Gray;
             this.cmbRoute.ForeColor = System.Drawing.Color.Black;
             this.cmbRoute.FormattingEnabled = true;
-            this.cmbRoute.Location = new System.Drawing.Point(170, 11);
+            this.cmbRoute.Location = new System.Drawing.Point(170, 36);
             this.cmbRoute.Name = "cmbRoute";
             this.cmbRoute.Size = new System.Drawing.Size(192, 20);
             this.cmbRoute.TabIndex = 4;
@@ -77,7 +80,7 @@
             // 
             this.txtSearchByName.BackColor = System.Drawing.Color.Gray;
             this.txtSearchByName.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchByName.Location = new System.Drawing.Point(170, 42);
+            this.txtSearchByName.Location = new System.Drawing.Point(170, 67);
             this.txtSearchByName.Name = "txtSearchByName";
             this.txtSearchByName.Size = new System.Drawing.Size(192, 21);
             this.txtSearchByName.TabIndex = 6;
@@ -90,10 +93,10 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(368, 11);
+            this.button1.Location = new System.Drawing.Point(372, 33);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 19);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 3;
             this.button1.Text = "검색";
             this.button1.UseVisualStyleBackColor = false;
@@ -102,7 +105,7 @@
             // rdoSearchByRoute
             // 
             this.rdoSearchByRoute.AutoSize = true;
-            this.rdoSearchByRoute.Location = new System.Drawing.Point(13, 15);
+            this.rdoSearchByRoute.Location = new System.Drawing.Point(13, 40);
             this.rdoSearchByRoute.Name = "rdoSearchByRoute";
             this.rdoSearchByRoute.Size = new System.Drawing.Size(151, 16);
             this.rdoSearchByRoute.TabIndex = 4;
@@ -114,7 +117,7 @@
             // rdoSearchByReststop
             // 
             this.rdoSearchByReststop.AutoSize = true;
-            this.rdoSearchByReststop.Location = new System.Drawing.Point(13, 42);
+            this.rdoSearchByReststop.Location = new System.Drawing.Point(13, 67);
             this.rdoSearchByReststop.Name = "rdoSearchByReststop";
             this.rdoSearchByReststop.Size = new System.Drawing.Size(139, 16);
             this.rdoSearchByReststop.TabIndex = 5;
@@ -125,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 539);
+            this.label2.Location = new System.Drawing.Point(158, 572);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 12);
             this.label2.TabIndex = 7;
@@ -134,7 +137,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(418, 39);
+            this.button2.Location = new System.Drawing.Point(422, 67);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 23);
             this.button2.TabIndex = 32;
@@ -145,7 +148,7 @@
             // button3
             // 
             this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button3.Location = new System.Drawing.Point(368, 39);
+            this.button3.Location = new System.Drawing.Point(372, 67);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(21, 23);
             this.button3.TabIndex = 31;
@@ -224,28 +227,17 @@
             this.lblRestName.AutoSize = true;
             this.lblRestName.BackColor = System.Drawing.Color.Black;
             this.lblRestName.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblRestName.ForeColor = System.Drawing.Color.White;
+            this.lblRestName.ForeColor = System.Drawing.Color.Ivory;
             this.lblRestName.Location = new System.Drawing.Point(9, 0);
             this.lblRestName.Name = "lblRestName";
             this.lblRestName.Size = new System.Drawing.Size(0, 28);
             this.lblRestName.TabIndex = 20;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rest.Properties.Resources.GAS1;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 69);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(349, 467);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowText;
             this.panel1.Controls.Add(this.lblRestName);
-            this.panel1.Location = new System.Drawing.Point(38, 225);
+            this.panel1.Location = new System.Drawing.Point(38, 250);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 44);
             this.panel1.TabIndex = 34;
@@ -255,7 +247,7 @@
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.label6);
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(38, 334);
+            this.panel2.Location = new System.Drawing.Point(38, 359);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(102, 41);
             this.panel2.TabIndex = 35;
@@ -265,7 +257,7 @@
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Controls.Add(this.label3);
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(38, 396);
+            this.panel3.Location = new System.Drawing.Point(38, 421);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(102, 41);
             this.panel3.TabIndex = 36;
@@ -275,7 +267,7 @@
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.Controls.Add(this.label4);
             this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(38, 454);
+            this.panel4.Location = new System.Drawing.Point(38, 479);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(102, 41);
             this.panel4.TabIndex = 36;
@@ -283,7 +275,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.lblGasolinePrice);
-            this.panel5.Location = new System.Drawing.Point(180, 334);
+            this.panel5.Location = new System.Drawing.Point(180, 359);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(171, 41);
             this.panel5.TabIndex = 36;
@@ -291,7 +283,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.lblDieselPrice);
-            this.panel6.Location = new System.Drawing.Point(180, 396);
+            this.panel6.Location = new System.Drawing.Point(180, 421);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(171, 41);
             this.panel6.TabIndex = 36;
@@ -299,10 +291,44 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.lblLpgPrice);
-            this.panel7.Location = new System.Drawing.Point(180, 454);
+            this.panel7.Location = new System.Drawing.Point(180, 479);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(171, 41);
             this.panel7.TabIndex = 37;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(456, 30);
+            this.panel8.TabIndex = 38;
+            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
+            this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseMove);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel9.BackgroundImage = global::Rest.Properties.Resources.gasstt;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(422, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(31, 24);
+            this.panel9.TabIndex = 39;
+            this.panel9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel9_MouseClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rest.Properties.Resources.GAS1;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 94);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 467);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmGasStation
             // 
@@ -310,7 +336,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(456, 558);
+            this.ClientSize = new System.Drawing.Size(456, 593);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -329,12 +356,12 @@
             this.Controls.Add(this.cmbRoute);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGasStation";
             this.Text = "주유";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.FrmGasStation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -349,6 +376,8 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +407,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
     }
 }

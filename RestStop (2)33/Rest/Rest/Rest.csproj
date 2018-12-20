@@ -77,6 +77,12 @@
     <Compile Include="FrmGasStation.Designer.cs">
       <DependentUpon>FrmGasStation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProgramInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProgramInfo.Designer.cs">
+      <DependentUpon>FrmProgramInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRouteFacilities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGasStation.resx">
       <DependentUpon>FrmGasStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProgramInfo.resx">
+      <DependentUpon>FrmProgramInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRouteFacilities.resx">
       <DependentUpon>FrmRouteFacilities.cs</DependentUpon>
@@ -131,6 +140,13 @@
     <None Include="Resources\GAS.jpg" />
     <EmbeddedResource Include="Resources\GAS1.jpg" />
     <EmbeddedResource Include="Resources\street-238458_1920.jpg" />
+    <None Include="Resources\1616161616161616.png" />
+    <None Include="Resources\iconfinder_060_Off_183189.png" />
+    <None Include="Resources\iconfinder_060_Off_183189.ico" />
+    <None Include="Resources\iconfinder_060_Off_1831891.ico" />
+    <None Include="Resources\fff.jpg" />
+    <EmbeddedResource Include="Resources\iconfinder_060_Off_1831891.png" />
+    <EmbeddedResource Include="Resources\gasstt.png" />
     <Content Include="res_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>res.mdf</DependentUpon>

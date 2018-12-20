@@ -63,6 +63,26 @@ namespace Rest.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _1616161616161616 {
+            get {
+                object obj = ResourceManager.GetObject("1616161616161616", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap fff {
+            get {
+                object obj = ResourceManager.GetObject("fff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap GAS {
             get {
                 object obj = ResourceManager.GetObject("GAS", resourceCulture);
@@ -76,6 +96,56 @@ namespace Rest.Properties {
         internal static System.Drawing.Bitmap GAS1 {
             get {
                 object obj = ResourceManager.GetObject("GAS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap gasstt {
+            get {
+                object obj = ResourceManager.GetObject("gasstt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_060_Off_183189 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_060_Off_183189", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_060_Off_1831891 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_060_Off_1831891", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_060_Off_1831892 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_060_Off_1831892", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_060_Off_1831893 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_060_Off_1831893", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
