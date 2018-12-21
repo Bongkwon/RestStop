@@ -26,7 +26,7 @@ namespace DatacoKR
         }
         Map map;
         ConnectionJoin conn = new ConnectionJoin();
-        List<string> highways = new List<string>();
+        private List<string> highways = new List<string>();
         string url = "";
         private bool dragging = false;
         private Point dragCursorPoint;
@@ -34,12 +34,12 @@ namespace DatacoKR
         private static List<Map> maps = new List<Map>();
 
         public static List<Map> Maps { get => maps; set => maps = value; }
+        
 
-        
-        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            highways.Clear();
+            comboBox2.Items.Clear();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn.OpenConnection();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -63,28 +63,15 @@ namespace DatacoKR
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null && comboBox2.SelectedItem == null)
-            {
-                MessageBox.Show("휴게소를 먼저 선택해 주세요");
-            }
-            else
-            {
-                CCTVDate data = new CCTVDate();
-                data.Show();
-            }
-            
-        }
+        
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             maps.Clear();
             string location = comboBox2.SelectedItem.ToString();
-            
-            System.Web.HttpUtility.UrlEncode(location);
-            //"https://dapi.kakao.com/v2/local/search/keyword.json?query=" + location;
 
+            System.Web.HttpUtility.UrlEncode(location);
+            
             string addr = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + location;
 
             string apiKey = "b9b9c1b07ffd1a04c4047fe6f8d0f145";
@@ -93,7 +80,7 @@ namespace DatacoKR
             String query = "query=" + location;
 
             var req = (HttpWebRequest)WebRequest.Create(addr);
-             
+
             req.Headers.Add("Authorization: KakaoAK " + apiKey);
             var res = (HttpWebResponse)req.GetResponse();
             var stream = res.GetResponseStream();
@@ -122,14 +109,22 @@ namespace DatacoKR
                 maps.Add(map);
             }
 
-            
-            url = "http://map.daum.net/?q=" + maps[0].Place_name + "&srcid=" + maps[0].Id + "&map_type=TYPE_MAP";
+            if (maps.Count == 0)
+            {
+                MessageBox.Show("해당 휴게소는 지도에 존재하지 않습니다.");
+                button1.Enabled = false;
+            }
+            else
+            {
+                url = "http://map.daum.net/?q=" + maps[0].Place_name + "&srcid=" + maps[0].Id + "&map_type=TYPE_MAP";
+            }
 
             
-
-           
 
         }
+
+     
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null && comboBox2.SelectedItem == null)

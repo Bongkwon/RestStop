@@ -50,7 +50,7 @@ namespace DatacoKR
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //button4.BackColor = Color.FromArgb(0, 0, 0, 0);
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -63,10 +63,21 @@ namespace DatacoKR
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            FrmGasStation fgs = new FrmGasStation();
-            fgs.Show();
+            new SelectJoin().Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CCTVDate date = new CCTVDate();
+            date.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FrmGasStation frmGasStation = new FrmGasStation();
+            frmGasStation.Show();
         }
     }
 }

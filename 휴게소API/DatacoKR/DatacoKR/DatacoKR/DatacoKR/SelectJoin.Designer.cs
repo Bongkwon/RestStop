@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,19 +115,6 @@
             this.button1.Text = "검 색";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.LightCoral;
-            this.button2.Location = new System.Drawing.Point(783, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 39);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "현재 해당 고속도로 상황보기\r\n";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox2
             // 
@@ -221,7 +207,7 @@
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(904, 2);
             this.button3.Name = "button3";
@@ -234,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(1004, 730);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.linkLabel1);
@@ -247,7 +233,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.label1);
@@ -269,7 +254,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;

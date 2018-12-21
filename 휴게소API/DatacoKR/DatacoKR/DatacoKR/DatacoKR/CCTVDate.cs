@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,43 +25,14 @@ namespace DatacoKR
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-
+        ConnectionJoin conn = new ConnectionJoin();
+        private List<string> highways = new List<string>();
+        Map map;
+        private List<Map> maps = new List<Map>();
         private void CCTVDate_Load(object sender, EventArgs e)
         {
-            
-            string serval = "http://openapi.its.go.kr:8081/api/NCCTVInfo?key=1544770326719&ReqType=2"+"&MinX="+ (double.Parse(SelectJoin.Maps[0].X) - 0.1)+ "&MaxX="+ SelectJoin.Maps[0].X+ "&MinY="+ (double.Parse(SelectJoin.Maps[0].Y)-0.1)+ "&MaxY="+ SelectJoin.Maps[0].Y+ "&type=ex";
 
-
-            //string serval = "http://openapi.its.go.kr:8081/api/NCCTVInfo?key=1544770326719&ReqType=2&MinX=127.100000&MaxX=128.890000&MinY=34.100000%20&MaxY=35.100000&type=ex";
-
-            Uri url = new Uri(serval);
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            HttpWebResponse res = request.GetResponse() as HttpWebResponse;
-            Stream stream = res.GetResponseStream();
-
-            XmlDocument doc = new XmlDocument();
-            doc.Load(stream);
-
-            XmlNodeList list = doc.DocumentElement.SelectNodes("//data");
-            
-            foreach (XmlNode item in list)
-            {
-                CCTV cctv = new CCTV()
-                {
-                    CctvUrl = item.SelectSingleNode("cctvurl").InnerText,
-                    CctvName = item.SelectSingleNode("cctvname").InnerText
-                };
-                ct.Add(cctv);
-                
-            }
-            if (ct.Count == 0)
-            {
-                MessageBox.Show("해당 휴게소 근처 CCTV가 존재 하지 않습니다.");
-            }
-            dataGridView1.DataSource = ct;
-            //doc.SelectNodes("//data/cctvurl");
-            stream.Flush();
-            stream.Close();
+           
 
 
         }
@@ -108,6 +81,126 @@ namespace DatacoKR
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            highways.Clear();
+            comboBox2.Items.Clear();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn.OpenConnection();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SelectRest";
+            SqlParameter[] sqlParameter = new SqlParameter[1];
+            sqlParameter[0] = new SqlParameter("@routeName", comboBox1.SelectedItem.ToString());
+            cmd.Parameters.AddRange(sqlParameter);
+            var r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                highways.Add(r["unitName"].ToString());
+            }
+
+            
+            foreach (string item in highways)
+            {
+                comboBox2.Items.Add(item);
+            }
+
+            conn.CloseConnection();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            maps.Clear();
+            string location = comboBox2.SelectedItem.ToString();
+
+            System.Web.HttpUtility.UrlEncode(location);
+            //"https://dapi.kakao.com/v2/local/search/keyword.json?query=" + location;
+
+            string addr = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + location;
+
+            string apiKey = "b9b9c1b07ffd1a04c4047fe6f8d0f145";
+
+      
+            String query = "query=" + location;
+
+            var req = (HttpWebRequest)WebRequest.Create(addr);
+
+            req.Headers.Add("Authorization: KakaoAK " + apiKey);
+            var res = (HttpWebResponse)req.GetResponse();
+            var stream = res.GetResponseStream();
+            var sr = new StreamReader(stream, Encoding.UTF8);
+
+            var j = JObject.Parse(sr.ReadToEnd());
+            var itemArr = JArray.Parse(j["documents"].ToString());
+
+            
+            foreach (JObject item in itemArr)
+            {
+                map = new Map()
+                {
+                    Address_name = item["address_name"].ToString(),
+                    Id = Int32.Parse(item["id"].ToString()),
+                    Phone = item["phone"].ToString(),
+                    Place_name = item["place_name"].ToString(),
+                    Place_url = item["place_url"].ToString(),
+                    X = item["x"].ToString(),
+                    Y = item["y"].ToString()
+
+                };
+                maps.Add(map);
+            }
+
+            if (maps.Count == 0)
+            {
+                MessageBox.Show("해당 휴게소는 지도에 존재하지 않습니다.");
+                button2.Enabled = false;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+             ct.Clear();
+                dataGridView1.DataSource = null;
+                string serval = "http://openapi.its.go.kr:8081/api/NCCTVInfo?key=1544770326719&ReqType=2" + "&MinX=" + (double.Parse(maps[0].X) - 0.1) + "&MaxX=" + maps[0].X + "&MinY=" + (double.Parse(maps[0].Y) - 0.1) + "&MaxY=" + maps[0].Y + "&type=ex";
+
+
+
+                Uri url = new Uri(serval);
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                HttpWebResponse ress = request.GetResponse() as HttpWebResponse;
+                Stream streamm = ress.GetResponseStream();
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load(streamm);
+
+                XmlNodeList list = doc.DocumentElement.SelectNodes("//data");
+
+                foreach (XmlNode item in list)
+                {
+                    CCTV cctv = new CCTV()
+                    {
+                        CctvUrl = item.SelectSingleNode("cctvurl").InnerText,
+                        CctvName = item.SelectSingleNode("cctvname").InnerText
+                    };
+                    ct.Add(cctv);
+
+                }
+                if (ct.Count == 0)
+                {
+                    MessageBox.Show("해당 휴게소 근처 CCTV가 존재 하지 않습니다.");
+                }
+                dataGridView1.DataSource = ct;
+
+                streamm.Flush();
+                streamm.Close();
+
+            
+
+
+
         }
     }
 }

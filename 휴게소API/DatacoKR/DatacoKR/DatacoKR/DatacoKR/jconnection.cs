@@ -29,15 +29,5 @@ namespace DatacoKR
             }
             return conn;
         }
-        private DataTable ExcuteSelect()
-        {
-            SqlCommand command = new SqlCommand();
-            adapter.SelectCommand = command;
-            adapter.SelectCommand.Connection = OpenConnection();
-            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            adapter.SelectCommand.CommandText = "DistinctRouteName";
-            
-
-        }
     }
 }

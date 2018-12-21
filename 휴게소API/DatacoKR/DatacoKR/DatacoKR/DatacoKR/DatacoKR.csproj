@@ -105,6 +105,7 @@
       <DependentUpon>FrmGasStation.cs</DependentUpon>
     </Compile>
     <Compile Include="GasStation.cs" />
+    <Compile Include="jconnection.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +143,7 @@
     <EmbeddedResource Include="FrmGasStation.resx">
       <DependentUpon>FrmGasStation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JoinSelect.resx" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +192,10 @@
     <Content Include="res.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\star-rating.png" />
+    <None Include="Resources\star-rating %283%29.png" />
+    <None Include="Resources\star-rating %282%29.png" />
+    <None Include="Resources\star-rating %281%29.png" />
     <Content Include="res_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
