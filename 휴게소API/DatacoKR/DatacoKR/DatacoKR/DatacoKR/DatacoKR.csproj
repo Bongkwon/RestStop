@@ -104,8 +104,19 @@
     <Compile Include="FrmGasStation.Designer.cs">
       <DependentUpon>FrmGasStation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHelp.Designer.cs">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="GasStation.cs" />
     <Compile Include="jconnection.cs" />
+    <Compile Include="JoinSelect.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoinSelect.resx</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,7 +154,13 @@
     <EmbeddedResource Include="FrmGasStation.resx">
       <DependentUpon>FrmGasStation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JoinSelect.resx" />
+    <EmbeddedResource Include="FrmHelp.resx">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JoinSelect.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>JoinSelect.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +203,7 @@
     <Content Include="Images\gas.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Images\HelpDesk.png" />
     <Content Include="Images\XSign.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

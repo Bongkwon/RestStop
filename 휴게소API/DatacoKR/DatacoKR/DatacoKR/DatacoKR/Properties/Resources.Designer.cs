@@ -73,6 +73,26 @@ namespace DatacoKR.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap HelpDesk {
+            get {
+                object obj = ResourceManager.GetObject("HelpDesk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap HelpDesk1 {
+            get {
+                object obj = ResourceManager.GetObject("HelpDesk1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap star_rating {
             get {
                 object obj = ResourceManager.GetObject("star_rating", resourceCulture);

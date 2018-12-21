@@ -250,5 +250,18 @@ namespace DatacoKR
         {
             txtSearchByName.Focus();
         }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("정말 프로그램을 종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }            
+        }
+
+        private void 도우말ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmHelp().Show();
+        }
     }
 }
