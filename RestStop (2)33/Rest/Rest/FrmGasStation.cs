@@ -136,11 +136,14 @@ namespace Rest
             }
             else if (rdoSearchByRoute.Checked == true)
             {
-                foreach (var item in lstGas)
+                if (cmbRoute.SelectedItem != null)
                 {
-                    if (item.HighwayName.Contains(cmbRoute.SelectedItem.ToString()))
+                    foreach (var item in lstGas)
                     {
-                        lstGasStation.Add(item);
+                        if (item.HighwayName.Contains(cmbRoute.SelectedItem.ToString()))
+                        {
+                            lstGasStation.Add(item);
+                        }
                     }
                 }
             }
