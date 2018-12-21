@@ -85,6 +85,7 @@ namespace DatacoKR
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button2.Enabled = true;
             highways.Clear();
             comboBox2.Items.Clear();
             SqlCommand cmd = new SqlCommand();
@@ -111,6 +112,7 @@ namespace DatacoKR
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button2.Enabled = true;
             maps.Clear();
             string location = comboBox2.SelectedItem.ToString();
 
@@ -156,6 +158,7 @@ namespace DatacoKR
                 MessageBox.Show("해당 휴게소는 지도에 존재하지 않습니다.");
                 button2.Enabled = false;
             }
+           
 
         }
 
@@ -164,7 +167,11 @@ namespace DatacoKR
 
              ct.Clear();
                 dataGridView1.DataSource = null;
-                string serval = "http://openapi.its.go.kr:8081/api/NCCTVInfo?key=1544770326719&ReqType=2" + "&MinX=" + (double.Parse(maps[0].X) - 0.1) + "&MaxX=" + maps[0].X + "&MinY=" + (double.Parse(maps[0].Y) - 0.1) + "&MaxY=" + maps[0].Y + "&type=ex";
+            string serval = "";
+            try
+            {
+                serval = "http://openapi.its.go.kr:8081/api/NCCTVInfo?key=1544770326719&ReqType=2" + "&MinX=" + (double.Parse(maps[0].X) - 0.1) + "&MaxX=" + maps[0].X + "&MinY=" + (double.Parse(maps[0].Y) - 0.1) + "&MaxY=" + maps[0].Y + "&type=ex";
+            
 
 
 
@@ -197,10 +204,14 @@ namespace DatacoKR
                 streamm.Flush();
                 streamm.Close();
 
-            
 
 
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("선택 해주세요");
+            }
         }
     }
 }

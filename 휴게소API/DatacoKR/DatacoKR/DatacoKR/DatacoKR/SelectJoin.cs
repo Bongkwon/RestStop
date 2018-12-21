@@ -38,6 +38,7 @@ namespace DatacoKR
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             highways.Clear();
             comboBox2.Items.Clear();
             SqlCommand cmd = new SqlCommand();
@@ -67,6 +68,7 @@ namespace DatacoKR
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             maps.Clear();
             string location = comboBox2.SelectedItem.ToString();
 
